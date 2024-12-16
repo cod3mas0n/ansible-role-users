@@ -1,0 +1,12 @@
+ansible
+ansible-lint
+yamllint
+
+# Needed for jinja2 json_query templating
+jmespath
+# Needed for ansible.utils.validate module
+jsonschema==4.23.0
+
+aar-doc==2.0.0
+ssh-keygen
+

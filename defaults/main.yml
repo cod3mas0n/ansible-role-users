@@ -1,0 +1,145 @@
+---
+
+# List of the groups to manage
+users_groups: []
+
+# Example:
+# users_groups:
+#   # Example 1: Simple group with only the name specified
+#   - name: developers
+
+#   # Example 2: Group with a specific GID
+#   - name: admins
+#     gid: 1001
+
+#   # Example 3: System group (typically has lower GID numbers)
+#   - name: systemgroup
+#     system: true
+
+#   # Example 4: Local group (non-system, typically for local use)
+#   - name: localgroup
+#     local: true
+
+#   # Example 5: Group with custom GID and defined as a non-system local group
+#   - name: customgroup
+#     gid: 2001
+#     system: false
+#     local: true
+
+#   # Example 6: Another system group with explicit GID
+#   - name: sysadmins
+#     gid: 1002
+#     system: true
+
+#   # Example 7: Group with all attributes defined
+#   - name: fullgroup
+#     gid: 3001
+#     system: false
+#     local: true
+
+#   # Example 8: Group without specifying optional attributes (uses defaults)
+#   - name: guest
+
+
+# List of the users to manage
+users_users: []
+
+# Examples:
+
+# users_users:
+#   # Example 1: Simple user with only the name specified
+#   - name: alice
+
+#   # Example 2: User with a specified password
+#   - name: bob
+#     password: 'securepassword'  # Replace 'securepassword' with the actual password
+
+#   # Example 3: User with a specified shell and comment
+#   - name: charlie
+#     shell: /bin/zsh
+#     comment: "Charlie Developer"
+
+#   # Example 4: User with a specific UID and home directory
+#   - name: dave
+#     uid: 1500
+#     home: /home/dave_custom
+
+#   # Example 5: User with an expiration date
+#   - name: eve
+#     expires: "2025-12-31"
+
+#   # Example 6: User assigned to a primary group and additional groups
+#   - name: frank
+#     group: developers
+#     groups: "docker,git"
+#     sudoer: true  # This user will be added to the sudoer group if defined
+
+#   # Example 7: User with SSH public key and custom SSH options
+#   - name: grace
+#     ssh_key: |
+#       ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3...
+#     ssh_key_options:
+#       - no-port-forwarding
+#       - no-agent-forwarding
+#     ssh_comment: "grace@domain.com"
+
+#   # Example 8: System user with no home directory
+#   - name: systemuser
+#     system: true
+#     create_home: false
+
+#   # Example 9: User with a custom password update policy and non-unique UID
+#   - name: heidi
+#     password: 'anothersecurepassword'
+#     update_password: "on_create"
+#     non_unique: true
+
+#   # Example 10: User with creation of home directory and specific UID
+#   - name: judy
+#     uid: 2001
+#     create_home: true
+#     shell: /bin/bash
+#     comment: "Judy User"
+#     sudoer: true
+
+#   # Example 11: User with all possible attributes defined
+#   - name: kate
+#     password: 'yetanothersecurepassword'
+#     shell: /bin/fish
+#     uid: 2500
+#     comment: "Kate Administrator"
+#     home: /home/kate
+#     expires: "2026-06-30"
+#     group: admins
+#     groups: "git,docker"
+#     sudoer: true
+#     append: true # NOTE: if any groups defined or sudoer is `true` , append has to be true ## https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html#parameter-append
+#     create_home: true
+#     update_password: "always"
+#     non_unique: false
+#     system: false
+#     local: true
+#     ssh_key: |
+#       ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD4...
+#     ssh_key_options:
+#       - no-X11-forwarding
+#     ssh_comment: "kate@domain.com"
+#     ssh_exclusive: true
+
+
+# These variables will be used when the delete task triggered
+# The user/group deletion will trigger when the `state` is `absent` in users_users and users_groups
+# Example :
+# users_users:
+#   - name: alice
+#     state: absent
+
+# Remove user's home directory
+users_remove_home: false
+
+# Forced removal of users and groups
+users_remove_force_user: false
+
+# Forced removal of groups
+users_remove_force_group: false
+...

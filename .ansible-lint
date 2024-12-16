@@ -1,0 +1,18 @@
+# https://ansible.readthedocs.io/projects/lint/configuring/#ansible-lint-configuration
+
+exclude_paths:
+  - .git
+  - .ansible-lint
+  - .yamllint
+  - .yamlfmt
+
+skip_list:
+  - name[casing]
+  - meta[company]
+  - galaxy_info[namespace]
+  - yaml
+
+enable_list:
+  - fqcn-builtins
+
+use_default_rules: true

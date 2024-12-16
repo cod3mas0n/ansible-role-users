@@ -1,0 +1,24 @@
+---
+
+- name: delete.yml | Delete User Group
+  ansible.builtin.group:
+    name: "{{ item.name }}"
+    force: "{{ groups_remove_force | default(false) | bool }}"
+    state: "{{ item.state | default('absent') }}"
+  when: item.state is defined and item.state == 'absent'
+  loop: "{{ users_groups }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+
+- name: delete.yml | Delete User
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    remove: "{{ users_remove_home | default(false) | bool }}"
+    force: "{{ users_remove_force_user | default(omit) | bool }}"
+    state: "{{ item.state | default('absent') }}"
+  when: item.state is defined and item.state == 'absent'
+  loop: "{{ users_users }}"
+  loop_control:
+    label: "{{ item.name }}"
+...

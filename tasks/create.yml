@@ -1,0 +1,53 @@
+---
+# manage user creation and group assignment
+
+- name: create.yml | Create groups
+  ansible.builtin.group:
+    name: "{{ item.name }}"
+    gid: "{{ item.gid | default(omit) }}"
+    system: "{{ item.system | default(omit) | bool }}"
+    local: "{{ item.local | default(omit) | bool }}"
+    state: "{{ item.state | default('present') }}"
+  when: (item.state | default('present')) == 'present'
+  loop: "{{ users_groups }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: create.yml | Create users
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    password: "{{ item.password | password_hash('sha512') if item.password is defined else omit }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    uid: "{{ item.uid | default(omit) }}"
+    comment: "{{ item.comment | default(omit) }}"
+    home: "{{ item.home | default(omit) }}"
+    expires: "{{ item.expires | default(omit) }}"
+    group: "{{ item.group | default(omit) }}"
+    groups: "{{ (item.groups | default('') + (',' + users_user_sudoer_group if item.sudoer is defined and item.sudoer else '')) | trim or omit }}"
+    append: "{{ item.append | default(true) | bool }}"
+    create_home: "{{ item.create_home | default(true) | bool }}"
+    update_password: "{{ item.update_password | default('always') }}"
+    non_unique: "{{ item.non_unique | default(omit) | bool }}"
+    system: "{{ item.system | default(omit) | bool }}"
+    local: "{{ item.local | default(omit) | bool }}"
+    state: "{{ item.state | default('present') }}"
+  when: (item.state | default('present')) == 'present'
+  loop: "{{ users_users }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: create.yml | Upload ssh public keys
+  ansible.posix.authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.ssh_key | replace('\n', '') }}"
+    key_options: "{{ item.ssh_key_options | default(omit) }}"
+    comment: "{{ item.ssh_comment | default(omit) }}"
+    exclusive: "{{ item.ssh_exclusive | default(omit) | bool }}"
+    state: present
+  loop: "{{ users_users }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when: 
+    - item.ssh_key is defined
+    - (item.state | default('present')) == 'present'
+...
