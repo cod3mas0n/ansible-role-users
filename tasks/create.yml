@@ -1,7 +1,7 @@
 ---
 # manage user creation and group assignment
 
-- name: create.yml | Create groups
+- name: Create groups | create.yml
   ansible.builtin.group:
     name: "{{ item.name }}"
     gid: "{{ item.gid | default(omit) }}"
@@ -13,7 +13,7 @@
   loop_control:
     label: "{{ item.name }}"
 
-- name: create.yml | Create users
+- name: Create users | create.yml
   ansible.builtin.user:
     name: "{{ item.name }}"
     password: "{{ item.password | password_hash('sha512') if item.password is defined else omit }}"
@@ -36,7 +36,7 @@
   loop_control:
     label: "{{ item.name }}"
 
-- name: create.yml | Upload ssh public keys
+- name: Upload ssh public keys | create.yml
   ansible.posix.authorized_key:
     user: "{{ item.name }}"
     key: "{{ item.ssh_key | replace('\n', '') }}"

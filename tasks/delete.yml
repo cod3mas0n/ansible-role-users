@@ -1,6 +1,6 @@
 ---
 
-- name: delete.yml | Delete User Group
+- name: Delete User Group | delete.yml
   ansible.builtin.group:
     name: "{{ item.name }}"
     force: "{{ groups_remove_force | default(false) | bool }}"
@@ -11,7 +11,7 @@
     label: "{{ item.name }}"
 
 
-- name: delete.yml | Delete User
+- name: Delete User | delete.yml
   ansible.builtin.user:
     name: "{{ item.name }}"
     remove: "{{ users_remove_home | default(false) | bool }}"

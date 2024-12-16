@@ -28,6 +28,9 @@ jobs:
       - name: Install Ansible.
         run: pip3 install ansible-core
 
+      - name: Install requirements collections
+        run: ansible-galaxy collection install ansible.posix
+
       - name: Trigger a new import on Galaxy.
         run: >-
           ansible-galaxy role import --api-key ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
