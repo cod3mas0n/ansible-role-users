@@ -12,6 +12,7 @@ skip_list:
   - meta[company]
   - galaxy_info[namespace]
   - yaml
+  - role-name
 
 enable_list:
   - fqcn-builtins
