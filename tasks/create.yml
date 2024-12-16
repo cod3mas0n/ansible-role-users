@@ -47,7 +47,7 @@
   loop: "{{ users_users }}"
   loop_control:
     label: "{{ item.name }}"
-  when: 
+  when:
     - item.ssh_key is defined
     - (item.state | default('present')) == 'present'
 ...

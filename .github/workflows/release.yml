@@ -1,3 +1,4 @@
+---
 name: Release
 'on':
   push:
@@ -31,3 +32,4 @@ jobs:
         run: >-
           ansible-galaxy role import --api-key ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
           $(echo ${{ github.repository }} | cut -d/ -f1) $(echo ${{ github.repository }} | cut -d/ -f2)
+...

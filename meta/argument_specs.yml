@@ -1,5 +1,5 @@
 ---
-# ADD STATE 
+# ADD STATE
 argument_specs:
   main:
     short_description: The main entry point for the users role.
@@ -78,7 +78,7 @@ argument_specs:
           sudoer:
             type: bool
             default: false
-            description: 
+            description:
               - If true, add the user to the sudoers group (wheel or sudo based on os family).
               - If false, user is not sudoer.
           append:
@@ -143,4 +143,4 @@ argument_specs:
           - sudoer group , which it could be "wheel" or "sudo" based on os_family
           - RedHat os_family, "wheel"
           - Debian os_family, "sudo"
-
+...

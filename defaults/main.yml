@@ -113,7 +113,8 @@ users_users: []
 #     group: admins
 #     groups: "git,docker"
 #     sudoer: true
-#     append: true # NOTE: if any groups defined or sudoer is `true` , append has to be true ## https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html#parameter-append
+#     append: true # NOTE: if any groups defined or sudoer is `true` , append has to be true
+#     https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html#parameter-append
 #     create_home: true
 #     update_password: "always"
 #     non_unique: false
@@ -125,7 +126,6 @@ users_users: []
 #       - no-X11-forwarding
 #     ssh_comment: "kate@domain.com"
 #     ssh_exclusive: true
-
 
 # These variables will be used when the delete task triggered
 # The user/group deletion will trigger when the `state` is `absent` in users_users and users_groups

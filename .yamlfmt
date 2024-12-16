@@ -11,5 +11,7 @@ formatter:
   include_document_start: true
   indentless_arrays: false
   disallow_anchors: false
-  max_line_length: 80
+  max_line_length: 180
   drop_merge_tag: true
+
+...

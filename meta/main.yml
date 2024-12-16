@@ -1,3 +1,4 @@
+---
 galaxy_info:
   role_name: users
   namespace: alimehraji
@@ -33,3 +34,4 @@ galaxy_info:
     - server
 
 dependencies: []
+...

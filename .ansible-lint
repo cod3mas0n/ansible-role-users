@@ -1,3 +1,4 @@
+---
 # https://ansible.readthedocs.io/projects/lint/configuring/#ansible-lint-configuration
 
 exclude_paths:
@@ -16,3 +17,4 @@ enable_list:
   - fqcn-builtins
 
 use_default_rules: true
+...
