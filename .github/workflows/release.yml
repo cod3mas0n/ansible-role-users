@@ -29,7 +29,7 @@ jobs:
         run: pip3 install ansible-core
 
       - name: Install requirements collections
-        run: ansible-galaxy collection install ansible.posix
+        run: ansible-galaxy install -r requirements.yml
 
       - name: Trigger a new import on Galaxy.
         run: >-

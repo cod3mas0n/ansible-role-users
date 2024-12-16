@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: users
-  namespace: alimehraji
+  namespace: AliMehraji
   author: AliMehraji
   description: Ansible role for managing users and groups on Linux hosts.
   license: "license (MIT)"
