@@ -53,6 +53,7 @@ users_users:
   # Example 2: User with a specified password
   - name: bob
     password: 'securepassword'  # Replace 'securepassword' with the actual password
+    update_password: "on_create"
 
   # Example 3: User with a specified shell and comment
   - name: charlie
