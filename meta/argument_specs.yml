@@ -83,7 +83,7 @@ argument_specs:
               - If false, user is not sudoer.
           append:
             type: bool
-            default: true
+            default: false
             description:
               - If true, add the user to the groups specified in groups.
               - If false, add the user to the groups specified in groups and remove from all others.
