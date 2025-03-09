@@ -1,3 +1,4 @@
+---
 rules:
   - common-misspellings:
       - ignore: []
@@ -5,3 +6,4 @@ rules:
       - skipWords: []
       - skipRegExps: []
       - skipNodeTypes: ['Link', 'Image', 'BlockQuote', 'Emphasis', 'Code']
+...
