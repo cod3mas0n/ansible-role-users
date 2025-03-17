@@ -12,7 +12,7 @@ Ansible role for managing users and groups on Linux hosts.
 
 - [community.posix](https://galaxy.ansible.com/ui/repo/published/ansible/posix/) ansible collection
 - install `ansible collection` requirements
-  
+
   ```bash
   ansible-galaxy install -r requirements.yml
   ```
