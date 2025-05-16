@@ -1,5 +1,7 @@
 # Users
 
+![Build Status](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci-build.yml/badge.svg)
+
 Ansible role for managing users and groups on Linux hosts.
 
 ## Requirements
