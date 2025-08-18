@@ -1,6 +1,8 @@
-# Users
+# Ansible Role Users
 
-![Build Status](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci-build.yml/badge.svg)
+[![CI](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci.yml/badge.svg)](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci.yml)
+
+[![Release](https://github.com/AliMehraji/ansible-role-users/actions/workflows/release.yml/badge.svg)](https://github.com/AliMehraji/ansible-role-users/actions/workflows/release.yml)
 
 Ansible role for managing users and groups on Linux hosts.
 
@@ -98,7 +100,7 @@ Forced deletion of a group. Default: `false`.
         system: true
     users_users:
       - name: alice
-        password: 'Secret123'
+        password: '<YOUR-SECURE-PASSWD>'
         shell: /bin/zsh
         group: users
         groups: developers
