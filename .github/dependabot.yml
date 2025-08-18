@@ -7,4 +7,6 @@ updates:
       interval: weekly
     labels:
       - chore
+    commit-message:
+      prefix: dependabot-chore
 ...
