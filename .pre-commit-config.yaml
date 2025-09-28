@@ -2,33 +2,26 @@
 repos:
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-merge-conflict
       - id: end-of-file-fixer
       - id: trailing-whitespace
 
-  - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.5.0
+  - repo: https://github.com/trufflesecurity/trufflehog
+    rev: v3.90.5
     hooks:
-      - id: detect-secrets
-        args: ['--baseline', '.secrets.baseline']
+      - id: trufflehog
 
   - repo: https://github.com/ansible/ansible-lint
     rev: v25.8.1
     hooks:
       - id: ansible-lint
-        args: ["-c", ".ansible-lint"]
+        args: ["-c", ".config/.ansible-lint"]
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.36.2
+    rev: v1.37.1
     hooks:
       - id: yamllint
-        args: ["-c", ".yamllint"]
-
-  # - repo: https://github.com/google/yamlfmt
-  #   rev: v0.16.0
-  #   hooks:
-  #     - id: yamlfmt
-  #       args: ["-conf", ".yamlfmt"]
+        args: ["-c", ".config/.yamllint"]
 ...

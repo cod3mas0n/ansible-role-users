@@ -11,7 +11,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: 'AliMehraji.users'
+    working-directory: 'cod3mas0n.users'
 
 jobs:
 
@@ -22,10 +22,10 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v5
         with:
-          path: 'AliMehraji.users'
+          path: 'cod3mas0n.users'
 
       - name: Set up Python 3.
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
@@ -42,11 +42,11 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          path: 'AliMehraji.users'
+          path: 'cod3mas0n.users'
       - name: Run ansible-lint
         uses: ansible/ansible-lint@main
         with:
-          working_directory: 'AliMehraji.users'
+          working_directory: 'cod3mas0n.users'
 
   molecule:
     name: Molecule
@@ -55,17 +55,26 @@ jobs:
       matrix:
         distro:
           - rockylinux9
-          - ubuntu2404
+          - rockylinux10
+          - ubuntu2004
           - ubuntu2204
-          - debian12
+          - ubuntu2404
           - debian11
+          - debian12
+          - debian13
           - fedora40
+          - fedora41
+          - fedora42
+          - centosstream9
+          - centosstream10
+          - almalinux9
+          - almalinux10
 
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v5
         with:
-          path: 'AliMehraji.users'
+          path: 'cod3mas0n.users'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v5

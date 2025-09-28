@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: AliMehraji
+  author: cod3mas0n
   description: Ansible role for managing users and groups on Linux hosts.
   license: "license (MIT)"
   min_ansible_version: "2.11"

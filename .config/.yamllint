@@ -1,16 +1,12 @@
 ---
-# https://yamllint.readthedocs.io/en/stable/configuration.html#
 extends: default
 
-# https://yamllint.readthedocs.io/en/stable/configuration.html#yaml-files-extensions
 yaml-files:
   - '*.yaml'
   - '*.yml'
   - .yamllint
-  - .yamlfmt
   - .ansible-lint
 
-# https://yamllint.readthedocs.io/en/stable/rules.html
 rules:
   document-start:
     present: true
@@ -32,4 +28,8 @@ rules:
   octal-values:
     forbid-implicit-octal: true
     forbid-explicit-octal: true
+
+ignore: |
+  .github/
+  .venv
 ...

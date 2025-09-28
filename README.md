@@ -1,8 +1,8 @@
 # Ansible Role Users
 
-[![CI](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci.yml/badge.svg)](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci.yml)
+[![CI](https://github.com/cod3mas0n/ansible-role-users/actions/workflows/ci.yml/badge.svg)](https://github.com/cod3mas0n/ansible-role-users/actions/workflows/ci.yml)
 
-[![Release](https://github.com/AliMehraji/ansible-role-users/actions/workflows/release.yml/badge.svg)](https://github.com/AliMehraji/ansible-role-users/actions/workflows/release.yml)
+[![Release](https://github.com/cod3mas0n/ansible-role-users/actions/workflows/release.yml/badge.svg)](https://github.com/cod3mas0n/ansible-role-users/actions/workflows/release.yml)
 
 Ansible role for managing users and groups on Linux hosts.
 
