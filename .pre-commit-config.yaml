@@ -17,11 +17,12 @@ repos:
     rev: v25.8.1
     hooks:
       - id: ansible-lint
-        args: ["-c", ".config/.ansible-lint"]
+        args: ["-c", ".config/.ansible-lint", "users-role"]
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.37.1
     hooks:
       - id: yamllint
         args: ["-c", ".config/.yamllint"]
+
 ...

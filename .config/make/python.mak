@@ -66,7 +66,3 @@ python-version: ## Displays the python version used for the .venv
 .PHONY: python-flake8
 python-flake8: ## Run flake8 linter for python
 	$(ACTIVATE_VENV) && flake8 --config .config/.flake8
-
-.PHONY: python-pytest
-python-pytest: ## Run pytest to test python scripts
-	$(ACTIVATE_VENV) && cd scripts/ && $(python_launcher) -m pytest
