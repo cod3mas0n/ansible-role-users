@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: cod3mas0n
-  role_name: users
+  role_name: users_management
   namespace: cod3mas0n
   description: Ansible role for managing users and groups on Linux hosts.
   license: "license (MIT)"

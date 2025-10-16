@@ -1,5 +1,5 @@
 ---
-name: "Yamllint"
+name: "Ansible-lint"
 
 'on':
   push:
@@ -28,6 +28,6 @@ jobs:
       - name: Install dependencies
         run: make bootstrap-dev
 
-      - name: Run Yamllint
-        run: make linter-yamllint
+      - name: Run Ansible-lint
+        run: make linter-ansible-lint
 ...

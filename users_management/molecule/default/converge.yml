@@ -11,5 +11,5 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: cod3mas0n.users
+    - role: cod3mas0n.users_management
 ...
