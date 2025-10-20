@@ -14,16 +14,12 @@ ROLE_NAME := users_management
 ROLE_SRC := $(CURDIR)
 ROLE_PATH := $(CURDIR)/.ansible/roles
 
-.PHONY: prepare-role
-prepare-role:
-	mkdir -p $(ROLE_PATH)
-	ln -sfn $(ROLE_SRC) $(ROLE_PATH)
 
 .PHONY: linter-ansible-lint
-linter-ansible-lint: prepare-role ## Lint Ansible files using ansible-lint
+linter-ansible-lint: ## Lint Ansible files using ansible-lint
 	echo "ansible-lint #########################################################"
 	$(ACTIVATE_VENV) && \
-	ansible-lint --force-color --parseable $(ROLE_PATH)/$(ROLE_NAME)
+	ansible-lint --force-color --parseable $(ROLE_SRC)
 
 .PHONY: linter-yamllint
 linter-yamllint: ## Lint YAML files using yamllint
