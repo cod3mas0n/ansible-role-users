@@ -8,12 +8,8 @@ skip_list:
   - yaml
   - role-name
 
-mock_roles:
-  - cod3mas0n.users
-
 enable_list:
   - fqcn-builtins
 
 use_default_rules: true
-
 ...

@@ -1,6 +1,6 @@
 # Python default launcher
 python_launcher := python$(shell cat .config/python_version.config | cut -d '=' -f 2)
-python_requirements_file ?= users_management/requirements.txt
+python_requirements_file ?= requirements.txt
 python_requirements_dev_file ?= .config/python/dev/requirements.txt
 
 # Activate virtual environment

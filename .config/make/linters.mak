@@ -11,7 +11,7 @@ ANSIBLE_LINT_CONFIG = .config/.ansible-lint
 # Role metadata
 ROLE_NAMESPACE := cod3mas0n
 ROLE_NAME := users_management
-ROLE_SRC := $(CURDIR)/users_management
+ROLE_SRC := $(CURDIR)
 ROLE_PATH := $(CURDIR)/.ansible/roles
 
 .PHONY: prepare-role
