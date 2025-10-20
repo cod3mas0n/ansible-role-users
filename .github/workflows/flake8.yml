@@ -10,7 +10,7 @@ name: "Flake8"
       - main
 
 jobs:
-  build:
+  linter-flake8:
     runs-on: ubuntu-latest
 
     steps:
