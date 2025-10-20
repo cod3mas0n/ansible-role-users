@@ -1,6 +1,8 @@
 ---
 galaxy_info:
-  author: AliMehraji
+  author: cod3mas0n
+  role_name: users_management
+  namespace: cod3mas0n
   description: Ansible role for managing users and groups on Linux hosts.
   license: "license (MIT)"
   min_ansible_version: "2.11"
@@ -26,10 +28,10 @@ galaxy_info:
         - all
 
   galaxy_tags:
-    - system
+    - linux
     - users
     - groups
-    - server
+    - management
 
 dependencies: []
 ...

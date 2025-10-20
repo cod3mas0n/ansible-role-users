@@ -40,7 +40,6 @@ users_groups:
   # Example 8: Group without specifying optional attributes (uses defaults)
   - name: guest
 
-
 # List of the users to manage
 # users_users: []
 

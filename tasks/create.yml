@@ -5,8 +5,8 @@
   ansible.builtin.group:
     name: "{{ item.name }}"
     gid: "{{ item.gid | default(omit) }}"
-    system: "{{ item.system | default(omit) | bool }}"
-    local: "{{ item.local | default(omit) | bool }}"
+    system: "{{ item.system | default(false) | bool }}"
+    local: "{{ item.local | default(false) | bool }}"
     state: "{{ item.state | default('present') }}"
   when: (item.state | default('present')) == 'present'
   loop: "{{ users_groups }}"
@@ -27,22 +27,22 @@
     append: "{{ item.append | default(false) | bool }}"
     create_home: "{{ item.create_home | default(true) | bool }}"
     update_password: "{{ item.update_password | default('always') }}"
-    non_unique: "{{ item.non_unique | default(omit) | bool }}"
-    system: "{{ item.system | default(omit) | bool }}"
-    local: "{{ item.local | default(omit) | bool }}"
+    non_unique: "{{ item.non_unique | default(false) | bool }}"
+    system: "{{ item.system | default(false) | bool }}"
+    local: "{{ item.local | default(false) | bool }}"
     state: "{{ item.state | default('present') }}"
   when: (item.state | default('present')) == 'present'
   loop: "{{ users_users }}"
   loop_control:
     label: "{{ item.name }}"
 
-- name: Upload ssh public keys | create.yml
+- name: Add SSH public keys | create.yml
   ansible.posix.authorized_key:
     user: "{{ item.name }}"
     key: "{{ item.ssh_key | replace('\n', '') }}"
     key_options: "{{ item.ssh_key_options | default(omit) }}"
     comment: "{{ item.ssh_comment | default(omit) }}"
-    exclusive: "{{ item.ssh_exclusive | default(omit) | bool }}"
+    exclusive: "{{ item.ssh_exclusive | default(false) | bool }}"
     state: present
   loop: "{{ users_users }}"
   loop_control:

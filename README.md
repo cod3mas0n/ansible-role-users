@@ -1,12 +1,15 @@
 # Ansible Role Users
 
-[![CI](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci.yml/badge.svg)](https://github.com/AliMehraji/ansible-role-users/actions/workflows/ci.yml)
-
-[![Release](https://github.com/AliMehraji/ansible-role-users/actions/workflows/release.yml/badge.svg)](https://github.com/AliMehraji/ansible-role-users/actions/workflows/release.yml)
+[![Ansible-lint](https://github.com/vitabaks/autobase/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/vitabaks/autobase/actions/workflows/ansible-lint.yml)
+[![Yamllint](https://github.com/vitabaks/autobase/actions/workflows/yamllint.yml/badge.svg)](https://github.com/vitabaks/autobase/actions/workflows/yamllint.yml)
+[![Flake8](https://github.com/vitabaks/autobase/actions/workflows/flake8.yml/badge.svg)](https://github.com/vitabaks/autobase/actions/workflows/flake8.yml)
+[![Molecule](https://github.com/vitabaks/autobase/actions/workflows/molecule.yml/badge.svg)](https://github.com/vitabaks/autobase/actions/workflows/molecule.yml)
+[![GitHub license](https://img.shields.io/github/license/vitabaks/autobase)](https://github.com/vitabaks/autobase/blob/master/LICENSE)
+[![Release](https://github.com/cod3mas0n/ansible-role-users/actions/workflows/release.yml/badge.svg)](https://github.com/cod3mas0n/ansible-role-users/actions/workflows/release.yml)
 
 Ansible role for managing users and groups on Linux hosts.
 
-## Requirements
+## Requirements (Work With Make)
 
 - install requirements
 
@@ -83,53 +86,13 @@ Forced deletion of a user, associated directories and groups. Default: `false`.
 
 Forced deletion of a group. Default: `false`.
 
-## Example Playbook
-
-```yaml
-- hosts: all
-  vars:
-    users_groups:
-      - name: old-developers
-        state: absent
-      - name: developers
-        gid: 5001
-      - name: old-admins
-        state: absent
-      - name: admins
-        gid: 599
-        system: true
-    users_users:
-      - name: alice
-        password: '<YOUR-SECURE-PASSWD>'
-        shell: /bin/zsh
-        group: users
-        groups: developers
-        sudoer: true
-        append: true
-        update_password: on_create
-        ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADg2n4v733gUH/dC4PZyQlvpFdjQyF8thJwe4mfn8qm alice@example.com
-        ssh_key_options: no-port-forwarding,no-agent-forwarding
-      - name: bob
-        groups: admins,developers
-        ssh_key: |
-          ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDdv1ycIBDsz5tavDqyaG9qRFYcvOzRteOy534MvHDy7BHu/
-          ikIOnuUAqT8axjrOxfkosheqTL9wTFIZWRxQJFKgFC7Z8BMAvq1SeU/InPBGJZHBy5LlKz7ZJiH32R1vNjJd4
-          T51EXXr9FgdzjPFc4KkgMuMHFXqP/n7CF7MpNO461YernikpCxU4pmDSfEFFR2bsJkA3BH3EMT0TfhfEFeTlX
-          +xNPUNGj5kbpoaz43lDTzNNflGHDoR8CcnSMTYNuHQAozecyg6gVsEpavPtvATKBj7rdbHpqhhvBRsA058FunJ
-          0exTYyrxP9+z+gu1CErN1UT3vItDI25Ays6PsQxcC2WjBghxaF3MmRClM63xilvw/7km38X8nK03b/+cy3NwyZC
-          7/FteW9mPs1wzkSp65Y+dkRLDofAsJASe1qK7M1/uq1fbCzb2USV7R4HgtYvyx8v14iScCCEKhu0Djm+HLrRq9
-          Sc1l8IfjTkRsV2pCJe5QiA8PRp+iNBmc1gwDs=
-        ssh_comment: bob@example.com
-      - name: rachael
-        state: absent
-  roles:
-    - users
-```
+## Compatibility
 
 ## License
 
-[MIT](LICENSE)
+Licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
-## Author Information
+## Author
 
-Created and maintained by Ali Mehraji <a.mehraji75@gmail.com>
+Ali Mehraji \
+a.mehraji75@gmail.com

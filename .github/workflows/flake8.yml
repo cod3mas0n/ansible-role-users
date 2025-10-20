@@ -1,0 +1,33 @@
+---
+name: "Flake8"
+
+'on':
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set TERM environment variable
+        run: echo "TERM=xterm" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: make bootstrap-dev
+
+      - name: Run Flake8
+        run: make linter-flake8
+...

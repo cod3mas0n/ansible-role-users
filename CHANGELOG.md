@@ -20,5 +20,5 @@ and this project adheres to [Semantic Versioning].
 
 <!-- Versions -->
 
-[1.0.0]: https://github.com/AliMehraji/ansible-role-users/releases/tag/v1.0.0
-[1.1.0]: https://github.com/AliMehraji/ansible-role-users/releases/tag/v1.1.0
+[1.0.0]: https://github.com/cod3mas0n/ansible-role-users/releases/tag/v1.0.0
+[1.1.0]: https://github.com/cod3mas0n/ansible-role-users/releases/tag/v1.1.0

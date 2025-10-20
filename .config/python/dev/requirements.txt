@@ -1,8 +1,14 @@
 ansible==12.1.0
 ansible-core==2.19.3
 ansible-lint==25.9.2
+yamllint==1.37.1
+molecule==25.9.0
+molecule-plugins==25.8.12
+molecule-plugins[docker]===25.8.12
+docker==7.1.0
 jmespath==1.0.1
 jsonschema==4.23.0
 aar-doc==2.0.0
 ssh-keygen==1.0.4
 passlib==1.7.4
+flake8==7.3.0

@@ -1,21 +1,12 @@
 ---
 # https://ansible.readthedocs.io/projects/lint/configuring/#ansible-lint-configuration
 
-exclude_paths:
-  - .git
-  - .ansible-lint
-  - .yamllint
-  - .yamlfmt
-
 skip_list:
   - name[casing]
   - meta[company]
   - galaxy_info[namespace]
   - yaml
   - role-name
-
-mock_roles:
-  - AliMehraji.users
 
 enable_list:
   - fqcn-builtins

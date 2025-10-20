@@ -1,26 +1,22 @@
 ---
-# https://yamllint.readthedocs.io/en/stable/configuration.html#
 extends: default
 
-# https://yamllint.readthedocs.io/en/stable/configuration.html#yaml-files-extensions
 yaml-files:
   - '*.yaml'
   - '*.yml'
   - .yamllint
-  - .yamlfmt
   - .ansible-lint
 
-# https://yamllint.readthedocs.io/en/stable/rules.html
 rules:
+  line-length:
+    max: 180
+    level: warning
   document-start:
     present: true
   document-end:
     present: true
   indentation:
     spaces: 2
-  line-length:
-    max: 180
-    level: warning
   comments:
     require-starting-space: true
     ignore-shebangs: true
@@ -28,8 +24,16 @@ rules:
   comments-indentation: false
   braces:
     forbid: false
+    min-spaces-inside: 0
     max-spaces-inside: 1
   octal-values:
     forbid-implicit-octal: true
     forbid-explicit-octal: true
+  new-lines:
+    type: unix
+  empty-lines:
+    max: 1
+
+ignore: |
+  .venv
 ...
