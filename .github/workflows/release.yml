@@ -29,7 +29,7 @@ jobs:
 
       - name: Import role to Ansible Galaxy.
         env:
-          ANSIBLE_GALAXY_TOKEN: ${{ secrets.GALAXY_API_KEY }}
+          ANSIBLE_GALAXY_TOKEN: ${{ secrets.ANSIBLE_GALAXY_TOKEN }}
         run: |
           ansible-galaxy role import --api-key $ANSIBLE_GALAXY_TOKEN \
             --role-name users_management \
