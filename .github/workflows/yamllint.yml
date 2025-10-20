@@ -10,7 +10,7 @@ name: "Yamllint"
       - main
 
 jobs:
-  build:
+  linter-yamllint:
     runs-on: ubuntu-latest
 
     steps:

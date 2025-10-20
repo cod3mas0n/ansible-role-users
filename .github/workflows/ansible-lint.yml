@@ -10,7 +10,7 @@ name: "Ansible-lint"
       - main
 
 jobs:
-  build:
+  ansible-lint:
     runs-on: ubuntu-latest
 
     steps:
