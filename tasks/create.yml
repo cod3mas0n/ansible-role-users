@@ -14,6 +14,8 @@
     label: "{{ item.name }}"
 
 - name: Create users | create.yml
+  vars:
+    sudo_group: "{{ users_user_sudoer_group if item.sudoer | default(false) and users_user_sudoer_group is defined else '' }}"
   ansible.builtin.user:
     name: "{{ item.name }}"
     password: "{{ item.password | password_hash('sha512') if item.password is defined else omit }}"
@@ -23,7 +25,7 @@
     home: "{{ item.home | default(omit) }}"
     expires: "{{ item.expires | default(omit) }}"
     group: "{{ item.group | default(omit) }}"
-    groups: "{{ (item.groups | default('') + (',' + users_user_sudoer_group if item.sudoer | default(false) and users_user_sudoer_group is defined else '')) | trim or omit }}"
+    groups: "{{ (item.groups | default('') + (',' + sudo_group if sudo_group else '')) | trim or omit }}"
     append: "{{ item.append | default(false) | bool }}"
     create_home: "{{ item.create_home | default(true) | bool }}"
     update_password: "{{ item.update_password | default('always') }}"
