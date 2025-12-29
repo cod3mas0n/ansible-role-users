@@ -23,7 +23,7 @@
     home: "{{ item.home | default(omit) }}"
     expires: "{{ item.expires | default(omit) }}"
     group: "{{ item.group | default(omit) }}"
-    groups: "{{ (item.groups | default('') + (',' + users_user_sudoer_group if item.sudoer is defined and item.sudoer else '')) | trim or omit }}"
+    groups: "{{ (item.groups | default('') + (',' + users_user_sudoer_group if item.sudoer | default(false) and users_user_sudoer_group is defined else '')) | trim or omit }}"
     append: "{{ item.append | default(false) | bool }}"
     create_home: "{{ item.create_home | default(true) | bool }}"
     update_password: "{{ item.update_password | default('always') }}"
