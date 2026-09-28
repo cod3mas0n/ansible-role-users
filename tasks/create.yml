@@ -26,7 +26,7 @@
     expires: "{{ item.expires | default(omit) }}"
     group: "{{ item.group | default(omit) }}"
     groups: "{{ (item.groups | default('') + (',' + sudo_group if sudo_group else '')) | trim or omit }}"
-    append: "{{ item.append | default(false) | bool }}"
+    append: "{{ item.append | default(true if item.sudoer | default(false) else false) | bool }}"
     create_home: "{{ item.create_home | default(true) | bool }}"
     update_password: "{{ item.update_password | default('always') }}"
     non_unique: "{{ item.non_unique | default(false) | bool }}"
