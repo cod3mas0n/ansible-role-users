@@ -2,7 +2,6 @@
 - name: Fetch OS dependent variables
   ansible.builtin.include_vars:
     file: "{{ item }}"
-    name: os_vars
   with_first_found:
     - files:
         - "{{ ansible_facts.distribution }}_{{ ansible_facts.distribution_major_version | default() }}.yml"
